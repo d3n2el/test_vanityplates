@@ -1,9 +1,14 @@
 from plates import is_valid
-def test_num():
+def test_num0():
     assert is_valid("CS50") == True
     assert is_valid("01dan") == False
     assert is_valid("CS05") == False
-    assert is_valid("dan12er") == False
+
+def test_num_placement():
+    assert is_valid("CS50") == True
+    assert is_valid("da10de") == False
+    assert is_valid("dr69w") == False
+
 
 def test_length():
     assert is_valid("ab") == True
@@ -13,9 +18,9 @@ def test_length():
 
 def test_firstletters():
     assert is_valid("da4") == True
-    assert is_valid("ef1") == True
-    assert is_valid("05ahs") == False
-    assert is_valid("34fjfje") == False
+    assert is_valid("#@djf") == False
+    assert is_valid("$money") == False
+    assert is_valid("9123") == False
 
 
 def test_punctuation():
